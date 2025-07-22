@@ -145,13 +145,12 @@ public class VideoJuegos {
     // Insertar
     private void insertarJuego() {
         try {
-            int ID = Integer.parseInt(idField.getText());
             String titulo = tituloField.getText();
             String genero = generoField.getText();
             String clasificacion = clasificacionField.getText();
             String plataforma = plataformaField.getText();
-            String sql = "INSERT INTO videojuegos (ID, Titulo, Genero, Clasificacion, Plataforma) VALUES " +
-                    "(" + ID + ", '" + titulo + "', '" + genero + "', '" + clasificacion + "', " + plataforma + ")";
+            String sql = "INSERT INTO videojuegos (Titulo, Genero, Clasificacion, Plataforma) VALUES " +
+                    "('" + titulo + "', '" + genero + "', '" + clasificacion + "', '" + plataforma + "')";
             Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
             JOptionPane.showMessageDialog(frame, "Video Juego ingresado.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
